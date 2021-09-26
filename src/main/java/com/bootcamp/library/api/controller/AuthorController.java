@@ -3,9 +3,7 @@ package com.bootcamp.library.api.controller;
 import com.bootcamp.library.api.model.Author;
 import com.bootcamp.library.api.service.AuthorService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -18,5 +16,15 @@ public class AuthorController {
     @GetMapping
     public Collection<Author> readAll () {
         return authorService.getAll();
+    }
+
+    @PostMapping
+    public void create (@RequestBody Author author) {
+        authorService.addAuthor(
+            author.getName(),
+            author.getEmail(),
+            author.getResume(),
+            author.getBirthday()
+        );
     }
 }
