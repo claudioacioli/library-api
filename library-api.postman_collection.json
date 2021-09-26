@@ -6,52 +6,124 @@
 	},
 	"item": [
 		{
-			"name": "Read all authors",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:{{port}}/{{api}}/authors",
-					"host": [
-						"localhost"
-					],
-					"port": "{{port}}",
-					"path": [
-						"{{api}}",
-						"authors"
-					]
+			"name": "Author CRUD",
+			"item": [
+				{
+					"name": "Create author",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Gustavo Cerbasi\",\n    \"email\": \"{{email}}\",\n    \"birthday\": \"1974-04-24\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:{{port}}/{{api}}/authors",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{api}}",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read all authors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:{{port}}/{{api}}/authors",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{api}}",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:{{port}}/{{api}}/authors/{{email}}",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{api}}",
+								"authors",
+								"{{email}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update author",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Gustavo Cerbasi\",\n    \"email\": \"{{email}}\",\n    \"resume\": \"Gustavo Petrasunas Cerbasi é um escritor, consultor financeiro, professor, palestrante e administrador brasileiro, nascido em 24 de abril de 1974. É casado, tem três filhos e reside com sua mulher no Brasil.\",\n    \"birthday\": \"1974-04-24\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:{{port}}/{{api}}/authors",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{api}}",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Author",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:{{port}}/{{api}}/authors/{{email}}",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{api}}",
+								"authors",
+								"{{email}}"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "Read Author",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:{{port}}/{{api}}/authors/{{email}}",
-					"host": [
-						"localhost"
-					],
-					"port": "{{port}}",
-					"path": [
-						"{{api}}",
-						"authors",
-						"{{email}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create author",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": null
-			},
-			"response": []
+			]
 		}
 	],
 	"event": [
@@ -85,7 +157,7 @@
 		},
 		{
 			"key": "email",
-			"value": "calnewport@gmail.com"
+			"value": "gustavo@gmail.com"
 		}
 	]
 }
