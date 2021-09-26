@@ -23,7 +23,7 @@ public class BookTester {
 
         Book book = new Book(
                 "1-4391-6734-6",
-                "How to Win Friends and Influence People ",
+                "How to Win Friends and Influence People",
                 LocalDate.parse("10/24/1936", DateTimeFormatter.ofPattern("MM/dd/yyyy")),
                 291,
                 author
