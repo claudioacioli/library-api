@@ -12,7 +12,7 @@
 	<artifactId>library-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>library-api</name>
-	<description>library-api</description>
+	<description>this is a project for the second module of Alura bootcamp java</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
