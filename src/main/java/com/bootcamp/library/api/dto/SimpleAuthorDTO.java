@@ -7,7 +7,7 @@ import java.time.LocalDate;
 /** This describes a simple Author interface to our clients
  *
  * @author claudio
- * create on 2021/09/36
+ * create on 2021/09/26
  * @see com.bootcamp.library.api.model.Author
  */
 @Getter

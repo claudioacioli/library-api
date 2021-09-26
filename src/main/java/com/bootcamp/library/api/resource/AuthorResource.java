@@ -9,6 +9,12 @@ import org.modelmapper.ModelMapper;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+/** This handle our Author service
+ *
+ * @author claudio
+ * create on 2021/09/26
+ * @see com.bootcamp.library.api.model.Author
+ */
 public class AuthorResource {
     private static final AuthorResource instance = new AuthorResource();
     private AuthorResource() {}

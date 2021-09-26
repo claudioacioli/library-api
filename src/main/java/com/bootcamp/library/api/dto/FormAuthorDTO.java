@@ -7,6 +7,12 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
 import java.time.LocalDate;
 
+/** This describes a form required Author interface to our clients
+ *
+ * @author claudio
+ * create on 2021/09/26
+ * @see com.bootcamp.library.api.model.Author
+ */
 @Getter
 @Setter
 @ToString
