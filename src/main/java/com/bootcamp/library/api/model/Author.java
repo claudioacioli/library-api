@@ -12,7 +12,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-@ToString
+@ToString(exclude = "resume")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Author {
