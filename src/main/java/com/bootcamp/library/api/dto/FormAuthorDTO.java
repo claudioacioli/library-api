@@ -1,6 +1,8 @@
 package com.bootcamp.library.api.dto;
 
+import com.bootcamp.library.api.model.Author;
 import lombok.*;
+import org.modelmapper.ModelMapper;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -31,4 +33,14 @@ public class FormAuthorDTO {
 
     @Past
     private LocalDate birthday;
+
+    public static FormAuthorDTO parse (Author author) {
+        ModelMapper modelMapper = new ModelMapper();
+        return modelMapper.map(author, FormAuthorDTO.class);
+    }
+
+    public Author toAuthor () {
+        ModelMapper modelMapper = new ModelMapper();
+        return modelMapper.map(this, Author.class);
+    }
 }
