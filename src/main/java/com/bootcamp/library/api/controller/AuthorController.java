@@ -7,6 +7,7 @@ import com.bootcamp.library.api.service.AuthorService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Collection;
 
 /** This controller provides endpoints handle with Author entity
@@ -27,7 +28,7 @@ public class AuthorController {
     }
 
     @PostMapping
-    public void create (@RequestBody FormAuthorDTO author) {
+    public void create (@RequestBody @Valid FormAuthorDTO author) {
         authorResource.addAuthor(author);
     }
 }
