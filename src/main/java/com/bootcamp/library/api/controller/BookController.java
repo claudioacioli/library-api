@@ -43,4 +43,9 @@ public class BookController {
         bookResource.updateBook(book);
     }
 
+    @DeleteMapping("{isbn}")
+    public void delete (@PathVariable String isbn) {
+        bookResource.removeBook(isbn);
+    }
+
 }

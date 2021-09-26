@@ -57,4 +57,8 @@ public class BookResource {
             authorService.getAuthor(book.getEmailOfAuthor())
         );
     }
+
+    public void removeBook (String isbn) {
+        bookService.deleteBook(isbn);
+    }
 }
