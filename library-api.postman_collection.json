@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Author CRUD",
+			"name": "CRUD Author",
 			"item": [
 				{
 					"name": "Create author",
@@ -126,8 +126,36 @@
 			]
 		},
 		{
-			"name": "Book CRUD",
+			"name": "CRUD Book",
 			"item": [
+				{
+					"name": "Create book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isbn\": \"{{isbn}}\",\n    \"title\": \"How to Win Friends and Influence People\",\n    \"releaseDate\": \"1936-10-19\",\n    \"numberOfPages\": 291,\n    \"emailOfAuthor\": \"dale_carnegie@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:{{port}}/{{api}}/books",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{api}}",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "Read all books",
 					"request": {
@@ -148,13 +176,33 @@
 					"response": []
 				},
 				{
-					"name": "Create book",
+					"name": "Read book",
 					"request": {
-						"method": "POST",
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:{{port}}/{{api}}/books/{{isbn}}",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{api}}",
+								"books",
+								"{{isbn}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update book",
+					"request": {
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"isbn\": \"1-4391-6734-6\",\n    \"title\": \"How to Win Friends and Influence People\",\n    \"releaseDate\": \"1936-10-19\",\n    \"numberOfPages\": 291,\n    \"emailOfAuthor\": \"dale_carnegie@gmail.com\"\n}",
+							"raw": "{\n    \"isbn\": \"{{isbn}}\",\n    \"title\": \"How to Win Friends and Influence People\",\n    \"releaseDate\": \"1936-10-19\",\n    \"numberOfPages\": 300,\n    \"emailOfAuthor\": \"dale_carnegie@gmail.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -170,6 +218,26 @@
 							"path": [
 								"{{api}}",
 								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:{{port}}/{{api}}/books/{{isbn}}",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{api}}",
+								"books",
+								"{{isbn}}"
 							]
 						}
 					},
@@ -210,6 +278,10 @@
 		{
 			"key": "email",
 			"value": "gustavo@gmail.com"
+		},
+		{
+			"key": "isbn",
+			"value": "isbn"
 		}
 	]
 }
