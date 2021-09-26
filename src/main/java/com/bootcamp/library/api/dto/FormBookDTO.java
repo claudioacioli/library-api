@@ -2,10 +2,7 @@ package com.bootcamp.library.api.dto;
 
 import lombok.*;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.PastOrPresent;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 
 /** This describes a form required Book interface to our clients
@@ -26,10 +23,13 @@ public class FormBookDTO {
     private String isbn;
     @NotBlank
     private String title;
+
+    @NotNull
     @PastOrPresent
     private LocalDate releaseDate;
 
-    @Size(min=100)
+    @NotNull
+    @Min(100)
     private int numberOfPages;
 
     @NotBlank
