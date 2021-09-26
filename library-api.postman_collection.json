@@ -23,13 +23,11 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:{{port}}/{{api}}/authors",
+							"raw": "{{endpoint}}/authors",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "{{port}}",
 							"path": [
-								"{{api}}",
 								"authors"
 							]
 						}
@@ -42,13 +40,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:{{port}}/{{api}}/authors",
+							"raw": "{{endpoint}}/authors",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "{{port}}",
 							"path": [
-								"{{api}}",
 								"authors"
 							]
 						}
@@ -61,13 +57,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:{{port}}/{{api}}/authors/{{email}}",
+							"raw": "{{endpoint}}/authors/{{email}}",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "{{port}}",
 							"path": [
-								"{{api}}",
 								"authors",
 								"{{email}}"
 							]
@@ -90,13 +84,11 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:{{port}}/{{api}}/authors",
+							"raw": "{{endpoint}}/authors",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "{{port}}",
 							"path": [
-								"{{api}}",
 								"authors"
 							]
 						}
@@ -109,13 +101,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:{{port}}/{{api}}/authors/{{email}}",
+							"raw": "{{endpoint}}/authors/{{email}}",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "{{port}}",
 							"path": [
-								"{{api}}",
 								"authors",
 								"{{email}}"
 							]
@@ -143,13 +133,11 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:{{port}}/{{api}}/books",
+							"raw": "{{endpoint}}/books",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "{{port}}",
 							"path": [
-								"{{api}}",
 								"books"
 							]
 						}
@@ -162,13 +150,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:{{port}}/{{api}}/books",
+							"raw": "{{endpoint}}/books",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "{{port}}",
 							"path": [
-								"{{api}}",
 								"books"
 							]
 						}
@@ -181,13 +167,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:{{port}}/{{api}}/books/{{isbn}}",
+							"raw": "{{endpoint}}/books/{{isbn}}",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "{{port}}",
 							"path": [
-								"{{api}}",
 								"books",
 								"{{isbn}}"
 							]
@@ -210,13 +194,11 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:{{port}}/{{api}}/books",
+							"raw": "{{endpoint}}/books",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "{{port}}",
 							"path": [
-								"{{api}}",
 								"books"
 							]
 						}
@@ -229,13 +211,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:{{port}}/{{api}}/books/{{isbn}}",
+							"raw": "{{endpoint}}/books/{{isbn}}",
 							"host": [
-								"localhost"
+								"{{endpoint}}"
 							],
-							"port": "{{port}}",
 							"path": [
-								"{{api}}",
 								"books",
 								"{{isbn}}"
 							]
@@ -268,12 +248,8 @@
 	],
 	"variable": [
 		{
-			"key": "port",
-			"value": "8585"
-		},
-		{
-			"key": "api",
-			"value": "api/v1.0"
+			"key": "endpoint",
+			"value": "localhost:8585/api/v1.0"
 		},
 		{
 			"key": "email",
