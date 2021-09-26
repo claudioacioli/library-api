@@ -1,6 +1,8 @@
 package com.bootcamp.library.api.dto;
 
+import com.bootcamp.library.api.model.Author;
 import lombok.*;
+import org.modelmapper.ModelMapper;
 
 import java.time.LocalDate;
 
@@ -19,4 +21,14 @@ public class SimpleAuthorDTO {
     private String name;
     private String email;
     private LocalDate birthday;
+
+    public static SimpleAuthorDTO parse (Author author) {
+        ModelMapper modelMapper = new ModelMapper();
+        return modelMapper.map(author, SimpleAuthorDTO.class);
+    }
+
+    public Author toAuthor () {
+        ModelMapper modelMapper = new ModelMapper();
+        return modelMapper.map(this, Author.class);
+    }
 }
