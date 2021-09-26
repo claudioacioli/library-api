@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  *
  * @author claudio
  * create on 2021/09/26
- * @see com.bootcamp.library.api.model.Author
+ * @see AuthorService
  */
 public class AuthorResource {
     private static final AuthorResource instance = new AuthorResource();
