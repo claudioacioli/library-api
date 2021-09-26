@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Read Authors",
+			"name": "Read all authors",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -21,6 +21,15 @@
 						"authors"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create author",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
 			},
 			"response": []
 		}
