@@ -1,4 +1,4 @@
-package com.bootcamp.library.api.service;
+package com.bootcamp.library.api.resource;
 
 import com.bootcamp.library.api.dto.SimpleAuthorDTO;
 
@@ -8,12 +8,12 @@ import java.time.format.DateTimeFormatter;
 /** This is service test driver
  *
  * @author claudio
- * @see SimpleAuthorService
+ * @see SimpleAuthorResource
  * create on 2021/09/26
  */
-public class SimpleAuthorServiceTester {
+public class SimpleAuthorResourceTester {
     public static void main(String[] args) {
-        SimpleAuthorService simpleAuthorService = SimpleAuthorService.getInstance();
+        SimpleAuthorResource simpleAuthorService = SimpleAuthorResource.getInstance();
 
         simpleAuthorService.addAuthor(
             new SimpleAuthorDTO(

@@ -1,7 +1,8 @@
-package com.bootcamp.library.api.service;
+package com.bootcamp.library.api.resource;
 
 import com.bootcamp.library.api.dto.SimpleAuthorDTO;
 import com.bootcamp.library.api.model.Author;
+import com.bootcamp.library.api.service.AuthorService;
 import org.modelmapper.ModelMapper;
 
 import java.util.Collection;
@@ -13,14 +14,14 @@ import java.util.stream.Collectors;
  * @see AuthorService
  * create on 2021/09/26
  */
-public class SimpleAuthorService {
-    private static final SimpleAuthorService instance = new SimpleAuthorService();
-    private SimpleAuthorService () {}
+public class SimpleAuthorResource {
+    private static final SimpleAuthorResource instance = new SimpleAuthorResource();
+    private SimpleAuthorResource() {}
 
     private final AuthorService authorService = AuthorService.getInstance();
     private final ModelMapper modelMapper = new ModelMapper();
 
-    public static SimpleAuthorService getInstance() {
+    public static SimpleAuthorResource getInstance() {
         return instance;
     }
 
