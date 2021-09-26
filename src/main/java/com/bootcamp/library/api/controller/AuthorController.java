@@ -7,6 +7,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
+/** This controller provides endpoints handle with Author entity
+ *
+ * @author claudio
+ * @see AuthorService
+ * create on 2021/09/26
+ */
 @Controller
 @RestController
 @RequestMapping("/api/v1.0/authors")
