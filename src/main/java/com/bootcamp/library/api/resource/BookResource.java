@@ -1,11 +1,12 @@
 package com.bootcamp.library.api.resource;
 
 import com.bootcamp.library.api.dto.FormBookDTO;
-import com.bootcamp.library.api.model.Book;
+import com.bootcamp.library.api.dto.SimpleBookDTO;
 import com.bootcamp.library.api.service.AuthorService;
 import com.bootcamp.library.api.service.BookService;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 /** This handle our book service
  *
@@ -25,8 +26,12 @@ public class BookResource {
         return instance;
     }
 
-    public Collection<Book> getAll () {
-        return bookService.getAll();
+    public Collection<SimpleBookDTO> getAll () {
+        return bookService
+                .getAll()
+                .stream()
+                .map(SimpleBookDTO::parse)
+                .collect(Collectors.toList());
     }
 
     public void addBook (FormBookDTO book) {

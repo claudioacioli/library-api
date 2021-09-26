@@ -1,7 +1,7 @@
 package com.bootcamp.library.api.controller;
 
 import com.bootcamp.library.api.dto.FormBookDTO;
-import com.bootcamp.library.api.model.Book;
+import com.bootcamp.library.api.dto.SimpleBookDTO;
 import com.bootcamp.library.api.resource.BookResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +24,7 @@ public class BookController {
     private static final BookResource bookResource = BookResource.getInstance();
 
     @GetMapping
-    public Collection<Book> readAll () {
+    public Collection<SimpleBookDTO> readAll () {
         return bookResource.getAll();
     }
 
