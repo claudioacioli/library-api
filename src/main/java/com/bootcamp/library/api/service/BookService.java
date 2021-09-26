@@ -55,4 +55,8 @@ public class BookService {
             )
         );
     }
+
+    public void deleteBook (String isnb) {
+        mapOfBooks.remove(isnb);
+    }
 }
