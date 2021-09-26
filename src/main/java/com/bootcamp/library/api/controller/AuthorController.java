@@ -1,8 +1,9 @@
 package com.bootcamp.library.api.controller;
 
+import com.bootcamp.library.api.dto.FormAuthorDTO;
 import com.bootcamp.library.api.dto.SimpleAuthorDTO;
+import com.bootcamp.library.api.resource.AuthorResource;
 import com.bootcamp.library.api.service.AuthorService;
-import com.bootcamp.library.api.resource.SimpleAuthorResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,15 +19,15 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/api/v1.0/authors")
 public class AuthorController {
-    private static final SimpleAuthorResource simpleAuthorResource = SimpleAuthorResource.getInstance();
+    private static final AuthorResource authorResource = AuthorResource.getInstance();
 
     @GetMapping
     public Collection<SimpleAuthorDTO> readAll () {
-        return simpleAuthorResource.getAll();
+        return authorResource.getAll();
     }
 
     @PostMapping
-    public void create (@RequestBody SimpleAuthorDTO author) {
-        simpleAuthorResource.addAuthor(author);
+    public void create (@RequestBody FormAuthorDTO author) {
+        authorResource.addAuthor(author);
     }
 }
