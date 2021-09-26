@@ -1,5 +1,6 @@
 package com.bootcamp.library.api.service;
 
+import com.bootcamp.library.api.dto.SimpleAuthorDTO;
 import com.bootcamp.library.api.model.Author;
 import com.bootcamp.library.api.model.Book;
 
@@ -8,6 +9,13 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+/** This service handle the Book model needs
+ *
+ * @author claudio
+ * @see Book
+ * @see Author
+ * create on 2021/09/26
+ */
 public class BookService {
     private static final BookService instance = new BookService();
     private BookService () {}
