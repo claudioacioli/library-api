@@ -124,6 +124,58 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Book CRUD",
+			"item": [
+				{
+					"name": "Read all books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:{{port}}/{{api}}/books",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{api}}",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isbn\": \"1-4391-6734-6\",\n    \"title\": \"How to Win Friends and Influence People\",\n    \"releaseDate\": \"1936-10-19\",\n    \"numberOfPages\": 291,\n    \"emailOfAuthor\": \"dale_carnegie@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:{{port}}/{{api}}/books",
+							"host": [
+								"localhost"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{api}}",
+								"books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
