@@ -1,5 +1,6 @@
 package com.bootcamp.library.api.controller;
 
+import com.bootcamp.library.api.dto.SimpleAuthorDTO;
 import com.bootcamp.library.api.model.Author;
 import com.bootcamp.library.api.service.AuthorService;
 import org.springframework.stereotype.Controller;
@@ -20,7 +21,7 @@ public class AuthorController {
     private static final AuthorService authorService = AuthorService.getInstance();
 
     @GetMapping
-    public Collection<Author> readAll () {
+    public Collection<SimpleAuthorDTO> readAll () {
         return authorService.getAll();
     }
 
