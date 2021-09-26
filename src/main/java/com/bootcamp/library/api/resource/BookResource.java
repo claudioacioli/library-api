@@ -34,13 +34,27 @@ public class BookResource {
                 .collect(Collectors.toList());
     }
 
+    public SimpleBookDTO getBook (String isbn) {
+        return SimpleBookDTO.parse(bookService.getBook(isbn));
+    }
+
     public void addBook (FormBookDTO book) {
         bookService.addBook(
-                book.getIsbn(),
-                book.getTitle(),
-                book.getReleaseDate(),
-                book.getNumberOfPages(),
-                authorService.getAuthor(book.getEmailOfAuthor())
+            book.getIsbn(),
+            book.getTitle(),
+            book.getReleaseDate(),
+            book.getNumberOfPages(),
+            authorService.getAuthor(book.getEmailOfAuthor())
+        );
+    }
+
+    public void updateBook (FormBookDTO book) {
+        bookService.updateBook(
+            book.getIsbn(),
+            book.getTitle(),
+            book.getReleaseDate(),
+            book.getNumberOfPages(),
+            authorService.getAuthor(book.getEmailOfAuthor())
         );
     }
 }

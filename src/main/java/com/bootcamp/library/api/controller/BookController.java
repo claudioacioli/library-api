@@ -28,9 +28,19 @@ public class BookController {
         return bookResource.getAll();
     }
 
+    @GetMapping("{isbn}")
+    public SimpleBookDTO read (@PathVariable String isbn) {
+        return bookResource.getBook(isbn);
+    }
+
     @PostMapping
     public void create (@RequestBody @Valid FormBookDTO book) {
         bookResource.addBook(book);
+    }
+
+    @PutMapping
+    public void  update (@RequestBody @Valid FormBookDTO book) {
+        bookResource.updateBook(book);
     }
 
 }
