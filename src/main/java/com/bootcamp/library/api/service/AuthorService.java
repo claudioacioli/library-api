@@ -2,14 +2,12 @@ package com.bootcamp.library.api.service;
 
 import com.bootcamp.library.api.dto.SimpleAuthorDTO;
 import com.bootcamp.library.api.model.Author;
-import org.modelmapper.ModelMapper;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /** This service handle the Author model needs
  *
