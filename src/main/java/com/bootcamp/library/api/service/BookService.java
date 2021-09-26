@@ -1,7 +1,9 @@
 package com.bootcamp.library.api.service;
 
+import com.bootcamp.library.api.model.Author;
 import com.bootcamp.library.api.model.Book;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,5 +20,18 @@ public class BookService {
 
     public Collection<Book> getAll () {
         return mapOfBooks.values();
+    }
+
+    public void addBook (String isbn, String title, LocalDate releaseDate, int numberOfPages, Author author) {
+        mapOfBooks.put(
+            isbn,
+            new Book(
+                isbn,
+                title,
+                releaseDate,
+                numberOfPages,
+                author
+            )
+        );
     }
 }
