@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Email;
 import java.util.Collection;
 
 /** This controller provides endpoints handle with Author entity
@@ -25,6 +26,11 @@ public class AuthorController {
     @GetMapping
     public Collection<SimpleAuthorDTO> readAll () {
         return authorResource.getAll();
+    }
+
+    @GetMapping("{email}")
+    public FormAuthorDTO read (@PathVariable @Valid @Email String email) {
+        return authorResource.getAuthor(email);
     }
 
     @PostMapping
