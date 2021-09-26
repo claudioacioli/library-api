@@ -3,7 +3,6 @@ package com.bootcamp.library.api.controller;
 import com.bootcamp.library.api.dto.FormAuthorDTO;
 import com.bootcamp.library.api.dto.SimpleAuthorDTO;
 import com.bootcamp.library.api.resource.AuthorResource;
-import com.bootcamp.library.api.service.AuthorService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +13,7 @@ import java.util.Collection;
 /** This controller provides endpoints handle with Author entity
  *
  * @author claudio
- * @see AuthorService
+ * @see AuthorResource
  * create on 2021/09/26
  */
 @Controller
