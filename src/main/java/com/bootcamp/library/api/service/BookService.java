@@ -42,4 +42,17 @@ public class BookService {
 
         return book;
     }
+
+    public void updateBook (String isbn, String title, LocalDate releaseDate, int numberOfPages, Author author) {
+        mapOfBooks.replace(
+            isbn,
+            new Book(
+                isbn,
+                title,
+                releaseDate,
+                numberOfPages,
+                author
+            )
+        );
+    }
 }
