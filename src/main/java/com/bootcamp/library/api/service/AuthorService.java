@@ -41,7 +41,6 @@ public class AuthorService {
 
     }
 
-    private ModelMapper modelMapper = new ModelMapper();
     private final Map<String, Author> mapOfAuthors = new HashMap<>();
 
     public static AuthorService getInstance() {
@@ -52,12 +51,8 @@ public class AuthorService {
         mapOfAuthors.put(email, new Author(name, email, resume, birthday));
     }
 
-    public Collection<SimpleAuthorDTO> getAll () {
-        return mapOfAuthors
-                .values()
-                .stream()
-                .map(t -> modelMapper.map(t, SimpleAuthorDTO.class))
-                .collect(Collectors.toList());
+    public Collection<Author> getAll () {
+        return mapOfAuthors.values();
     }
 
     public Author getAuthor (String email) {
