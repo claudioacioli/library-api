@@ -54,6 +54,9 @@ public class AuthorService {
     }
 
     public Author getAuthor (String email) {
+        if (mapOfAuthors.get(email) == null)
+            throw new IllegalArgumentException("There isn't author with this email");
+
         return mapOfAuthors.get(email);
     }
 }
