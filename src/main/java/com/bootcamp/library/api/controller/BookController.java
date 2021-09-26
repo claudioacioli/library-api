@@ -1,15 +1,19 @@
 package com.bootcamp.library.api.controller;
 
-import com.bootcamp.library.api.service.BookService;
+import com.bootcamp.library.api.dto.FormBookDTO;
+import com.bootcamp.library.api.model.Book;
+import com.bootcamp.library.api.resource.BookResource;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.Collection;
 
 /** This controller provides endpoints to handle Books
  *
  * @author claudio
  * create on 2021/09/26
- * @see BookService
+ * @see BookResource
  */
 
 @Controller
@@ -17,6 +21,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1.0/books")
 public class BookController {
 
-    private static final BookService boookService = BookService.getInstance();
+    private static final BookResource bookResource = BookResource.getInstance();
+
+    @GetMapping
+    public Collection<Book> readAll () {
+        return bookResource.getAll();
+    }
+
+    @PostMapping
+    public void create (@RequestBody @Valid FormBookDTO book) {
+        bookResource.addBook(book);
+    }
 
 }
