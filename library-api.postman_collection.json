@@ -25,6 +25,26 @@
 			"response": []
 		},
 		{
+			"name": "Read Author",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:{{port}}/{{api}}/authors/{{email}}",
+					"host": [
+						"localhost"
+					],
+					"port": "{{port}}",
+					"path": [
+						"{{api}}",
+						"authors",
+						"{{email}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Create author",
 			"request": {
 				"method": "GET",
@@ -62,6 +82,10 @@
 		{
 			"key": "api",
 			"value": "api/v1.0"
+		},
+		{
+			"key": "email",
+			"value": "calnewport@gmail.com"
 		}
 	]
 }
