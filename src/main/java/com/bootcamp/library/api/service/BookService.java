@@ -34,4 +34,12 @@ public class BookService {
             )
         );
     }
+
+    public Book getBook(String isbn) {
+        Book book = mapOfBooks.get(isbn);
+        if (book == null)
+            throw new IllegalArgumentException("There isn't book with this isbn");
+
+        return book;
+    }
 }
