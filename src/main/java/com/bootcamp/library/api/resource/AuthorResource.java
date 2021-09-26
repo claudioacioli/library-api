@@ -34,6 +34,19 @@ public class AuthorResource {
         authorService.addAuthor(author.getName(), author.getEmail(), author.getResume(), author.getBirthday());
     }
 
+    public void updateAuthor (FormAuthorDTO author) {
+        authorService.updateAuthor(
+                author.getName(),
+                author.getEmail(),
+                author.getResume(),
+                author.getBirthday()
+        );
+    }
+
+    public void removeAuthor (String email) {
+        authorService.removeAuthor(email);
+    }
+
     public FormAuthorDTO getAuthor (String email) {
         return FormAuthorDTO.parse(authorService.getAuthor(email));
     }

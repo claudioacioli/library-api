@@ -1,5 +1,6 @@
 package com.bootcamp.library.api.service;
 
+import com.bootcamp.library.api.dto.FormAuthorDTO;
 import com.bootcamp.library.api.dto.SimpleAuthorDTO;
 import com.bootcamp.library.api.model.Author;
 
@@ -47,6 +48,15 @@ public class AuthorService {
 
     public void addAuthor (String name, String email, String resume, LocalDate birthday) {
         mapOfAuthors.put(email, new Author(name, email, resume, birthday));
+    }
+
+    public void updateAuthor (String name, String email, String resume, LocalDate birthday) {
+        Author author = new Author(name, email, resume, birthday);
+        mapOfAuthors.replace(email, author);
+    }
+
+    public void removeAuthor (String email) {
+        mapOfAuthors.remove(email);
     }
 
     public Collection<Author> getAll () {

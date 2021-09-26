@@ -37,4 +37,14 @@ public class AuthorController {
     public void create (@RequestBody @Valid FormAuthorDTO author) {
         authorResource.addAuthor(author);
     }
+
+    @PutMapping
+    public void update (@RequestBody @Valid FormAuthorDTO author) {
+        authorResource.updateAuthor(author);
+    }
+
+    @DeleteMapping("{email}")
+    public void delete (@PathVariable String email) {
+        authorResource.removeAuthor(email);
+    }
 }
