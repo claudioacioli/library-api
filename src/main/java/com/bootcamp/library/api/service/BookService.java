@@ -1,6 +1,5 @@
 package com.bootcamp.library.api.service;
 
-import com.bootcamp.library.api.dto.SimpleAuthorDTO;
 import com.bootcamp.library.api.model.Author;
 import com.bootcamp.library.api.model.Book;
 
