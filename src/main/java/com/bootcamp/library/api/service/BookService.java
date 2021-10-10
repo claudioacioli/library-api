@@ -8,7 +8,6 @@ import com.bootcamp.library.api.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,8 +28,6 @@ public class BookService {
     private AuthorService authorService;
     @Autowired
     private BookRepository bookRepository;
-
-    private final Map<String, Book> mapOfBooks = new HashMap<>();
 
     public Collection<SimpleBookDTO> getAll () {
         return bookRepository
