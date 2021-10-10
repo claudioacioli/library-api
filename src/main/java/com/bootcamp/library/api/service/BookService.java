@@ -4,6 +4,7 @@ import com.bootcamp.library.api.dto.FormBookDTO;
 import com.bootcamp.library.api.dto.SimpleBookDTO;
 import com.bootcamp.library.api.model.Author;
 import com.bootcamp.library.api.model.Book;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.Collection;
@@ -18,6 +19,8 @@ import java.util.stream.Collectors;
  * @see Author
  * create on 2021/09/26
  */
+
+@Service
 public class BookService {
     private static final BookService instance = new BookService();
     private BookService () {}
