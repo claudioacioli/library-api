@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 public class BookServiceTester {
     public static void main(String[] args) {
         BookService bookService = BookService.getInstance();
-        AuthorService authorService = AuthorService.getInstance();
+        AuthorService authorService = new AuthorService();
 
         bookService.addBook(
             "1-4391-6734-6",

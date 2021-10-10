@@ -4,6 +4,7 @@ import com.bootcamp.library.api.dto.FormBookDTO;
 import com.bootcamp.library.api.dto.SimpleBookDTO;
 import com.bootcamp.library.api.model.Author;
 import com.bootcamp.library.api.model.Book;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -25,7 +26,8 @@ public class BookService {
     private static final BookService instance = new BookService();
     private BookService () {}
 
-    private final AuthorService authorService = AuthorService.getInstance();
+    @Autowired
+    private AuthorService authorService;
     private final Map<String, Book> mapOfBooks = new HashMap<>();
 
     public static BookService getInstance() {

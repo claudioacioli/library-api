@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class AuthorServiceTester {
     public static void main(String[] args) {
-        AuthorService authorService = AuthorService.getInstance();
+        AuthorService authorService = new AuthorService();
 
         authorService.addAuthor(
                 new FormAuthorDTO(
