@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Gustavo Cerbasi\",\n    \"email\": \"{{email}}\",\n    \"birthday\": \"1974-04-24\"\n}",
+							"raw": "{\n    \"name\": \"Dale Carnegie\",\n    \"email\": \"{{email}}\",\n    \"birthday\": \"1988-11-24\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -76,7 +76,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Gustavo Cerbasi\",\n    \"email\": \"{{email}}\",\n    \"resume\": \"Gustavo Petrasunas Cerbasi é um escritor, consultor financeiro, professor, palestrante e administrador brasileiro, nascido em 24 de abril de 1974. É casado, tem três filhos e reside com sua mulher no Brasil.\",\n    \"birthday\": \"1974-04-24\"\n}",
+							"raw": "{\n    \"name\": \"Gustavo Cerbasi\",\n    \"email\": \"{{email}}\",\n    \"resume\": \"Gustavo Petrasunas Cerbasi é um escritor, consultor financeiro, professor, palestrante e administrador brasileiro, nascido em 24 de abril de 1974. É casado, tem três filhos e reside com sua mulher no Brasil.\",\n    \"birthday\": \"1888-11-24\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -125,7 +125,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"isbn\": \"{{isbn}}\",\n    \"title\": \"How to Win Friends and Influence People\",\n    \"releaseDate\": \"1936-10-19\",\n    \"numberOfPages\": 291,\n    \"emailOfAuthor\": \"dale_carnegie@gmail.com\"\n}",
+							"raw": "{\n    \"isbn\": \"{{isbn}}\",\n    \"title\": \"How to Win Friends and Influence People\",\n    \"releaseDate\": \"1936-10-19\",\n    \"numberOfPages\": 291,\n    \"emailOfAuthor\": \"{{email}}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -186,7 +186,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"isbn\": \"{{isbn}}\",\n    \"title\": \"How to Win Friends and Influence People\",\n    \"releaseDate\": \"1936-10-19\",\n    \"numberOfPages\": 300,\n    \"emailOfAuthor\": \"dale_carnegie@gmail.com\"\n}",
+							"raw": "{\n    \"isbn\": \"{{isbn}}\",\n    \"title\": \"How to Win Friends and Influence People\",\n    \"releaseDate\": \"1936-10-19\",\n    \"numberOfPages\": 300,\n    \"emailOfAuthor\": \"{{email}}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -253,7 +253,7 @@
 		},
 		{
 			"key": "email",
-			"value": "gustavo@gmail.com"
+			"value": "dale@gmail.com"
 		},
 		{
 			"key": "isbn",
