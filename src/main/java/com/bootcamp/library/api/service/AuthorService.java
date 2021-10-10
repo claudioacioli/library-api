@@ -7,6 +7,7 @@ import com.bootcamp.library.api.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -23,14 +24,17 @@ public class AuthorService {
     @Autowired
     private AuthorRepository authorRepository;
 
+    @Transactional
     public void addAuthor (FormAuthorDTO author) {
         authorRepository.save(author.toAuthor());
     }
 
+    @Transactional
     public void updateAuthor (FormAuthorDTO author) {
         authorRepository.save(author.toAuthor());
     }
 
+    @Transactional
     public void removeAuthor (String email) {
         authorRepository.deleteByEmail(email);
     }
