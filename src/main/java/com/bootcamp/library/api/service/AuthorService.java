@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +39,6 @@ public class AuthorService {
         authorRepository.save(author.toAuthor());
     }
 
-
     public void updateAuthor (String name, String email, String resume, LocalDate birthday) {
         Author author = new Author(name, email, resume, birthday);
         mapOfAuthors.replace(email, author);
@@ -60,8 +58,7 @@ public class AuthorService {
     }
 
     public Collection<SimpleAuthorDTO> getAll () {
-        return mapOfAuthors
-                .values()
+        return authorRepository.findAll()
                 .stream()
                 .map(SimpleAuthorDTO::parse)
                 .collect(Collectors.toList())
