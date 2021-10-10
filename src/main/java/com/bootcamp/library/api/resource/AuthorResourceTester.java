@@ -23,6 +23,5 @@ public class AuthorResourceTester {
                         LocalDate.parse("1974/04/24", DateTimeFormatter.ofPattern("yyyy/MM/dd"))
                 )
         );
-        authorResource.getAll().forEach(System.out::println);
     }
 }

@@ -23,12 +23,6 @@ public class AuthorResource {
         return instance;
     }
 
-    public Collection<SimpleAuthorDTO> getAll () {
-        return authorService.getAll()
-                .stream()
-                .map(SimpleAuthorDTO::parse)
-                .collect(Collectors.toList());
-    }
 
     public void addAuthor (FormAuthorDTO author) {
         authorService.addAuthor(author.getName(), author.getEmail(), author.getResume(), author.getBirthday());
