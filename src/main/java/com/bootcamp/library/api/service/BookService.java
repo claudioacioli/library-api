@@ -41,19 +41,6 @@ public class BookService {
         ;
     }
 
-    public void addBook (String isbn, String title, LocalDate releaseDate, int numberOfPages, Author author) {
-        mapOfBooks.put(
-            isbn,
-            new Book(
-                isbn,
-                title,
-                releaseDate,
-                numberOfPages,
-                author
-            )
-        );
-    }
-
     // TODO: Think about better approach
     public void addBook (FormBookDTO book) {
         String email = book.getEmailOfAuthor();

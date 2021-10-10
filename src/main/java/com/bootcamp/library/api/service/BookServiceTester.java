@@ -1,5 +1,7 @@
 package com.bootcamp.library.api.service;
 
+import com.bootcamp.library.api.dto.FormBookDTO;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -14,14 +16,15 @@ import java.time.format.DateTimeFormatter;
 public class BookServiceTester {
     public static void main(String[] args) {
         BookService bookService = new BookService();
-        AuthorService authorService = new AuthorService();
 
         bookService.addBook(
-            "1-4391-6734-6",
-            "How to Win Friends and Influence People ",
-            LocalDate.parse("10/24/1936", DateTimeFormatter.ofPattern("MM/dd/yyyy")),
-            291,
-            authorService.getAuthor("dale_carnegie@gmail.com").toAuthor()
+                new FormBookDTO(
+                "1-4391-6734-6",
+                "How to Win Friends and Influence People ",
+                LocalDate.parse("10/24/1936", DateTimeFormatter.ofPattern("MM/dd/yyyy")),
+                291,
+                "dale_carnegie@gmail.com"
+                )
         );
 
         bookService.getAll().forEach(System.out::println);
