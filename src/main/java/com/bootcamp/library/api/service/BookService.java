@@ -71,14 +71,17 @@ public class BookService {
         );
     }
 
+    // TODO: Think about better approach
     public void updateBook (FormBookDTO book) {
-        updateBook(
-            book.getIsbn(),
-            book.getTitle(),
-            book.getReleaseDate(),
-            book.getNumberOfPages(),
-            authorService.getAuthor(book.getEmailOfAuthor()).toAuthor()
-        );
+        String isbn = book.getIsbn();
+        Book updatedBook = book.toBook();
+
+        if (bookRepository.existsByIsbn(isbn)) {
+            Long id = bookRepository.findByIsbn(isbn).getId();
+            updatedBook.setId(id);
+        }
+
+        bookRepository.save(updatedBook);
     }
 
     public void deleteBook (String isnb) {
