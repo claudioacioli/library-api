@@ -5,11 +5,11 @@ import com.bootcamp.library.api.dto.SimpleAuthorDTO;
 import com.bootcamp.library.api.model.Author;
 import com.bootcamp.library.api.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.Collection;
-import java.util.stream.Collectors;
 
 /** This service handle the Author model needs
  *
@@ -48,11 +48,9 @@ public class AuthorService {
         authorRepository.deleteByEmail(email);
     }
 
-    public Collection<SimpleAuthorDTO> getAll () {
-        return authorRepository.findAll()
-                .stream()
+    public Page<SimpleAuthorDTO> getAll (Pageable pageable) {
+        return authorRepository.findAll(pageable)
                 .map(SimpleAuthorDTO::parse)
-                .collect(Collectors.toList())
                 ;
     }
 
