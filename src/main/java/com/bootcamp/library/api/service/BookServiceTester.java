@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class BookServiceTester {
     public static void main(String[] args) {
-        BookService bookService = BookService.getInstance();
+        BookService bookService = new BookService();
         AuthorService authorService = new AuthorService();
 
         bookService.addBook(

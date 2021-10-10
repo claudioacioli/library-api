@@ -23,16 +23,10 @@ import java.util.stream.Collectors;
 
 @Service
 public class BookService {
-    private static final BookService instance = new BookService();
-    private BookService () {}
 
     @Autowired
     private AuthorService authorService;
     private final Map<String, Book> mapOfBooks = new HashMap<>();
-
-    public static BookService getInstance() {
-        return instance;
-    }
 
     public Collection<SimpleBookDTO> getAll () {
         return mapOfBooks
