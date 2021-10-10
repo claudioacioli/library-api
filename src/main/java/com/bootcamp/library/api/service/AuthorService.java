@@ -39,18 +39,8 @@ public class AuthorService {
         authorRepository.save(author.toAuthor());
     }
 
-    public void updateAuthor (String name, String email, String resume, LocalDate birthday) {
-        Author author = new Author(name, email, resume, birthday);
-        mapOfAuthors.replace(email, author);
-    }
-
     public void updateAuthor (FormAuthorDTO author) {
-        updateAuthor(
-            author.getName(),
-            author.getEmail(),
-            author.getResume(),
-            author.getBirthday()
-        );
+        authorRepository.save(author.toAuthor());
     }
 
     public void removeAuthor (String email) {
