@@ -3,6 +3,8 @@ package com.bootcamp.library.api.service;
 import com.bootcamp.library.api.dto.FormAuthorDTO;
 import com.bootcamp.library.api.dto.SimpleAuthorDTO;
 import com.bootcamp.library.api.model.Author;
+import com.bootcamp.library.api.repository.AuthorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -21,26 +23,21 @@ import java.util.stream.Collectors;
 
 @Service
 public class AuthorService {
+
     private static final AuthorService instance = new AuthorService();
     private AuthorService () {}
 
+    @Autowired
+    private AuthorRepository authorRepository;
     private final Map<String, Author> mapOfAuthors = new HashMap<>();
 
     public static AuthorService getInstance() {
         return instance;
     }
 
-    public void addAuthor (String name, String email, String resume, LocalDate birthday) {
-        mapOfAuthors.put(email, new Author(name, email, resume, birthday));
-    }
 
     public void addAuthor (FormAuthorDTO author) {
-        addAuthor(
-            author.getName(),
-            author.getEmail(),
-            author.getResume(),
-            author.getBirthday()
-        );
+        authorRepository.save(author.toAuthor());
     }
 
 
