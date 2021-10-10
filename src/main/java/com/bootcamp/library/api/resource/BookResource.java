@@ -38,16 +38,6 @@ public class BookResource {
         return SimpleBookDTO.parse(bookService.getBook(isbn));
     }
 
-    public void addBook (FormBookDTO book) {
-        bookService.addBook(
-            book.getIsbn(),
-            book.getTitle(),
-            book.getReleaseDate(),
-            book.getNumberOfPages(),
-            authorService.getAuthor(book.getEmailOfAuthor()).toAuthor()
-        );
-    }
-
     public void updateBook (FormBookDTO book) {
         bookService.updateBook(
             book.getIsbn(),
