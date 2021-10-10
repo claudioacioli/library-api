@@ -10,4 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @see Author
  */
 public interface AuthorRepository extends JpaRepository<Author, Long> {
+    Author findByEmail(String email);
+    Boolean existsByEmail(String email);
 }
