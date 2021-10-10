@@ -1,5 +1,6 @@
 package com.bootcamp.library.api.service;
 
+import com.bootcamp.library.api.dto.FormBookDTO;
 import com.bootcamp.library.api.model.Author;
 import com.bootcamp.library.api.model.Book;
 
@@ -19,6 +20,7 @@ public class BookService {
     private static final BookService instance = new BookService();
     private BookService () {}
 
+    private final AuthorService authorService = AuthorService.getInstance();
     private final Map<String, Book> mapOfBooks = new HashMap<>();
 
     public static BookService getInstance() {
@@ -39,6 +41,16 @@ public class BookService {
                 numberOfPages,
                 author
             )
+        );
+    }
+
+    public void addBook (FormBookDTO book) {
+        addBook(
+            book.getIsbn(),
+            book.getTitle(),
+            book.getReleaseDate(),
+            book.getNumberOfPages(),
+            authorService.getAuthor(book.getEmailOfAuthor()).toAuthor()
         );
     }
 
