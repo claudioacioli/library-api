@@ -44,7 +44,7 @@ public class BookResource {
             book.getTitle(),
             book.getReleaseDate(),
             book.getNumberOfPages(),
-            authorService.getAuthor(book.getEmailOfAuthor())
+            authorService.getAuthor(book.getEmailOfAuthor()).toAuthor()
         );
     }
 
@@ -54,7 +54,7 @@ public class BookResource {
             book.getTitle(),
             book.getReleaseDate(),
             book.getNumberOfPages(),
-            authorService.getAuthor(book.getEmailOfAuthor())
+            authorService.getAuthor(book.getEmailOfAuthor()).toAuthor()
         );
     }
 

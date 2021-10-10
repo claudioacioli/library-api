@@ -21,7 +21,7 @@ public class BookServiceTester {
             "How to Win Friends and Influence People ",
             LocalDate.parse("10/24/1936", DateTimeFormatter.ofPattern("MM/dd/yyyy")),
             291,
-            authorService.getAuthor("dale_carnegie@gmail.com")
+            authorService.getAuthor("dale_carnegie@gmail.com").toAuthor()
         );
 
         bookService.getAll().forEach(System.out::println);
