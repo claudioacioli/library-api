@@ -2,7 +2,6 @@ package com.bootcamp.library.api.controller;
 
 import com.bootcamp.library.api.dto.FormBookDTO;
 import com.bootcamp.library.api.dto.SimpleBookDTO;
-import com.bootcamp.library.api.resource.BookResource;
 import com.bootcamp.library.api.service.BookService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +13,7 @@ import java.util.Collection;
  *
  * @author claudio
  * create on 2021/09/26
- * @see BookResource
+ * @see BookService
  */
 
 @Controller
@@ -23,7 +22,6 @@ import java.util.Collection;
 public class BookController {
 
     private static final BookService bookService = BookService.getInstance();
-    private static final BookResource bookResource = BookResource.getInstance();
 
     @GetMapping
     public Collection<SimpleBookDTO> readAll () {
