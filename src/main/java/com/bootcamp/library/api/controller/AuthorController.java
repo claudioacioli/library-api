@@ -14,7 +14,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import java.net.URI;
-import java.util.Collection;
 
 /** This controller provides endpoints handle with Author entity
  *
