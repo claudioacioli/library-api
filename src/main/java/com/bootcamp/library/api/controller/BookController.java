@@ -19,7 +19,7 @@ import java.util.Collection;
 
 @Controller
 @RestController
-@RequestMapping("/api/v1.0/books")
+@RequestMapping("/books")
 public class BookController {
 
     @Autowired
@@ -30,7 +30,7 @@ public class BookController {
         return bookService.getAll();
     }
 
-    @GetMapping("{isbn}")
+    @GetMapping("/{isbn}")
     public SimpleBookDTO read (@PathVariable String isbn) {
         return bookService.getBook(isbn);
     }
@@ -45,7 +45,7 @@ public class BookController {
         bookService.updateBook(book);
     }
 
-    @DeleteMapping("{isbn}")
+    @DeleteMapping("/{isbn}")
     public void delete (@PathVariable String isbn) {
         bookService.deleteBook(isbn);
     }

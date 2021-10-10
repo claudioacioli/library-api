@@ -19,7 +19,7 @@ import java.util.Collection;
  */
 @Controller
 @RestController
-@RequestMapping("/api/v1.0/authors")
+@RequestMapping("/authors")
 public class AuthorController {
 
     @Autowired
@@ -30,7 +30,7 @@ public class AuthorController {
         return authorService.getAll();
     }
 
-    @GetMapping("{email}")
+    @GetMapping("/{email}")
     public FormAuthorDTO read (@PathVariable @Valid @Email String email) {
         return authorService.getAuthor(email);
     }
@@ -45,7 +45,7 @@ public class AuthorController {
         authorService.updateAuthor(author);
     }
 
-    @DeleteMapping("{email}")
+    @DeleteMapping("/{email}")
     public void delete (@PathVariable String email) {
         authorService.removeAuthor(email);
     }
