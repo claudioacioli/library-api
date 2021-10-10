@@ -33,8 +33,8 @@ public class BookService {
     private final Map<String, Book> mapOfBooks = new HashMap<>();
 
     public Collection<SimpleBookDTO> getAll () {
-        return mapOfBooks
-                .values()
+        return bookRepository
+                .findAll()
                 .stream()
                 .map(SimpleBookDTO::parse)
                 .collect(Collectors.toList())
