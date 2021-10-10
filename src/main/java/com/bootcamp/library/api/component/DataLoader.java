@@ -39,7 +39,7 @@ public class DataLoader {
         };
 
         for (int i=0; i < names.length; i++) {
-            authorService.addAuthor(new FormAuthorDTO(
+            authorService.updateAuthor(new FormAuthorDTO(
                     names[i],
                     emails[i],
                     null,
@@ -85,7 +85,7 @@ public class DataLoader {
             book.setEmailOfAuthor(email[i]);
             book.setReleaseDate(LocalDate.parse("2021/01/01", DateTimeFormatter.ofPattern("yyyy/MM/dd")));
             book.setNumberOfPages(100);
-            bookService.addBook(book);
+            bookService.updateBook(book);
         }
     }
 }
