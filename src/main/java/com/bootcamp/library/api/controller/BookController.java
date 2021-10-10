@@ -42,7 +42,7 @@ public class BookController {
 
     @PutMapping
     public void  update (@RequestBody @Valid FormBookDTO book) {
-        bookResource.updateBook(book);
+        bookService.updateBook(book);
     }
 
     @DeleteMapping("{isbn}")
