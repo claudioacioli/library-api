@@ -22,7 +22,8 @@ import java.util.Collection;
 @RequestMapping("/api/v1.0/authors")
 public class AuthorController {
 
-    private AuthorService authorService = AuthorService.getInstance();
+    @Autowired
+    private AuthorService authorService;
 
     @GetMapping
     public Collection<SimpleAuthorDTO> readAll () {
