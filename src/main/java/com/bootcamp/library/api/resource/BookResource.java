@@ -38,15 +38,7 @@ public class BookResource {
         return SimpleBookDTO.parse(bookService.getBook(isbn));
     }
 
-    public void updateBook (FormBookDTO book) {
-        bookService.updateBook(
-            book.getIsbn(),
-            book.getTitle(),
-            book.getReleaseDate(),
-            book.getNumberOfPages(),
-            authorService.getAuthor(book.getEmailOfAuthor()).toAuthor()
-        );
-    }
+
 
     public void removeBook (String isbn) {
         bookService.deleteBook(isbn);
