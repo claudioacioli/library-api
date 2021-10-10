@@ -26,14 +26,6 @@ public class BookResource {
         return instance;
     }
 
-    public Collection<SimpleBookDTO> getAll () {
-        return bookService
-                .getAll()
-                .stream()
-                .map(SimpleBookDTO::parse)
-                .collect(Collectors.toList());
-    }
-
     public SimpleBookDTO getBook (String isbn) {
         return SimpleBookDTO.parse(bookService.getBook(isbn));
     }

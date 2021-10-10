@@ -27,7 +27,7 @@ public class BookController {
 
     @GetMapping
     public Collection<SimpleBookDTO> readAll () {
-        return bookResource.getAll();
+        return bookService.getAll();
     }
 
     @GetMapping("{isbn}")

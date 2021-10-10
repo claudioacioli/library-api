@@ -1,6 +1,7 @@
 package com.bootcamp.library.api.service;
 
 import com.bootcamp.library.api.dto.FormBookDTO;
+import com.bootcamp.library.api.dto.SimpleBookDTO;
 import com.bootcamp.library.api.model.Author;
 import com.bootcamp.library.api.model.Book;
 
@@ -8,6 +9,7 @@ import java.time.LocalDate;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /** This service handle the Book model needs
  *
@@ -27,8 +29,13 @@ public class BookService {
         return instance;
     }
 
-    public Collection<Book> getAll () {
-        return mapOfBooks.values();
+    public Collection<SimpleBookDTO> getAll () {
+        return mapOfBooks
+                .values()
+                .stream()
+                .map(SimpleBookDTO::parse)
+                .collect(Collectors.toList())
+        ;
     }
 
     public void addBook (String isbn, String title, LocalDate releaseDate, int numberOfPages, Author author) {
