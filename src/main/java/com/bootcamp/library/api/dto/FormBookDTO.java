@@ -1,6 +1,8 @@
 package com.bootcamp.library.api.dto;
 
+import com.bootcamp.library.api.model.Book;
 import lombok.*;
+import org.modelmapper.ModelMapper;
 
 import javax.validation.constraints.*;
 import java.time.LocalDate;
@@ -35,4 +37,9 @@ public class FormBookDTO {
     @NotBlank
     @Email
     private String emailOfAuthor;
+
+    public Book toBook () {
+        ModelMapper modelMapper = new ModelMapper();
+        return modelMapper.map(this, Book.class);
+    }
 }
