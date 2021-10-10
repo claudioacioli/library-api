@@ -26,7 +26,5 @@ public class BookServiceTester {
                 "dale_carnegie@gmail.com"
                 )
         );
-
-        bookService.getAll().forEach(System.out::println);
     }
 }
