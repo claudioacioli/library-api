@@ -43,7 +43,7 @@ public class AuthorController {
 
     @PutMapping
     public void update (@RequestBody @Valid FormAuthorDTO author) {
-        authorResource.updateAuthor(author);
+        authorService.updateAuthor(author);
     }
 
     @DeleteMapping("{email}")

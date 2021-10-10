@@ -65,6 +65,15 @@ public class AuthorService {
         mapOfAuthors.replace(email, author);
     }
 
+    public void updateAuthor (FormAuthorDTO author) {
+        updateAuthor(
+            author.getName(),
+            author.getEmail(),
+            author.getResume(),
+            author.getBirthday()
+        );
+    }
+
     public void removeAuthor (String email) {
         mapOfAuthors.remove(email);
     }
