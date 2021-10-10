@@ -75,6 +75,16 @@ public class BookService {
         );
     }
 
+    public void updateBook (FormBookDTO book) {
+        updateBook(
+            book.getIsbn(),
+            book.getTitle(),
+            book.getReleaseDate(),
+            book.getNumberOfPages(),
+            authorService.getAuthor(book.getEmailOfAuthor()).toAuthor()
+        );
+    }
+
     public void deleteBook (String isnb) {
         mapOfBooks.remove(isnb);
     }
