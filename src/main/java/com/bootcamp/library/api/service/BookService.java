@@ -59,13 +59,16 @@ public class BookService {
     @Transactional
     public void updateBook (FormBookDTO book) {
         String isbn = book.getIsbn();
+        String email = book.getEmailOfAuthor();
         Book updatedBook = book.toBook();
+        Author author = authorService.getAuthor(email).toAuthor();
 
         if (bookRepository.existsByIsbn(isbn)) {
             Long id = bookRepository.findByIsbn(isbn).getId();
             updatedBook.setId(id);
         }
 
+        updatedBook.setAuthor(author);
         bookRepository.save(updatedBook);
     }
 
