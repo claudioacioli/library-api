@@ -37,8 +37,6 @@ public class AuthorServiceTester {
                 )
         );
 
-        authorService.getAll().forEach(System.out::println);
-
         System.out.println(authorService.getAuthor("calnewport@gmail.com"));
     }
 }
