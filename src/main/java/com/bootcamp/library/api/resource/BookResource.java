@@ -40,7 +40,5 @@ public class BookResource {
 
 
 
-    public void removeBook (String isbn) {
-        bookService.deleteBook(isbn);
-    }
+
 }
