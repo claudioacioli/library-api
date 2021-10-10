@@ -4,6 +4,8 @@ import com.bootcamp.library.api.dto.FormBookDTO;
 import com.bootcamp.library.api.dto.SimpleBookDTO;
 import com.bootcamp.library.api.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +13,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.util.Collection;
 
 /** This controller provides endpoints to handle Books
  *
@@ -29,8 +30,8 @@ public class BookController {
     private BookService bookService;
 
     @GetMapping
-    public Collection<SimpleBookDTO> readAll () {
-        return bookService.getAll();
+    public Page<SimpleBookDTO> readAll (Pageable pageable) {
+        return bookService.getAll(pageable);
     }
 
     @GetMapping("/{isbn}")

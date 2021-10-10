@@ -6,11 +6,11 @@ import com.bootcamp.library.api.model.Author;
 import com.bootcamp.library.api.model.Book;
 import com.bootcamp.library.api.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.Collection;
-import java.util.stream.Collectors;
 
 /** This service handle the Book model needs
  *
@@ -28,12 +28,10 @@ public class BookService {
     @Autowired
     private BookRepository bookRepository;
 
-    public Collection<SimpleBookDTO> getAll () {
+    public Page<SimpleBookDTO> getAll (Pageable pageable) {
         return bookRepository
-                .findAll()
-                .stream()
+                .findAll(pageable)
                 .map(SimpleBookDTO::parse)
-                .collect(Collectors.toList())
         ;
     }
 
