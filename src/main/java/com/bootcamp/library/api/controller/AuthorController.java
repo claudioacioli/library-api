@@ -24,7 +24,6 @@ import java.util.Collection;
 public class AuthorController {
 
     private AuthorService authorService = AuthorService.getInstance();
-    private static final AuthorResource authorResource = AuthorResource.getInstance();
 
     @GetMapping
     public Collection<SimpleAuthorDTO> readAll () {
@@ -33,7 +32,7 @@ public class AuthorController {
 
     @GetMapping("{email}")
     public FormAuthorDTO read (@PathVariable @Valid @Email String email) {
-        return authorResource.getAuthor(email);
+        return authorService.getAuthor(email);
     }
 
     @PostMapping
