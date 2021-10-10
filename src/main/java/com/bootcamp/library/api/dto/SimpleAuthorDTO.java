@@ -18,6 +18,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SimpleAuthorDTO {
+    private Long id;
     private String name;
     private String email;
     private LocalDate birthday;
