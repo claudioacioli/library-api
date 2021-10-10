@@ -23,10 +23,6 @@ public class AuthorResource {
         return instance;
     }
 
-    public void removeAuthor (String email) {
-        authorService.removeAuthor(email);
-    }
-
     public FormAuthorDTO getAuthor (String email) {
         return FormAuthorDTO.parse(authorService.getAuthor(email));
     }
