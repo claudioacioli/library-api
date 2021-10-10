@@ -23,15 +23,6 @@ public class AuthorResource {
         return instance;
     }
 
-    public void updateAuthor (FormAuthorDTO author) {
-        authorService.updateAuthor(
-                author.getName(),
-                author.getEmail(),
-                author.getResume(),
-                author.getBirthday()
-        );
-    }
-
     public void removeAuthor (String email) {
         authorService.removeAuthor(email);
     }
