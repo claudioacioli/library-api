@@ -52,11 +52,10 @@ public class BookService {
     }
 
     public SimpleBookDTO getBook(String isbn) {
-        Book book = mapOfBooks.get(isbn);
-        if (book == null)
+        if (!bookRepository.existsByIsbn(isbn))
             throw new IllegalArgumentException("There isn't book with this isbn");
 
-        return SimpleBookDTO.parse(book);
+        return SimpleBookDTO.parse(bookRepository.findByIsbn(isbn));
     }
 
     public void updateBook (String isbn, String title, LocalDate releaseDate, int numberOfPages, Author author) {
