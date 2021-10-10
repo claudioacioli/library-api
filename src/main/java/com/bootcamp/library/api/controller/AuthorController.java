@@ -39,7 +39,7 @@ public class AuthorController {
     }
 
     @PostMapping
-    public ResponseEntity create (@RequestBody @Valid FormAuthorDTO author, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<FormAuthorDTO> create (@RequestBody @Valid FormAuthorDTO author, UriComponentsBuilder uriBuilder) {
         authorService.addAuthor(author);
         URI uri = uriBuilder.path("/authors/{email}").buildAndExpand(author.getEmail()).toUri();
         return ResponseEntity.created(uri).body(author);
