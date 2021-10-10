@@ -3,6 +3,7 @@ package com.bootcamp.library.api.controller;
 import com.bootcamp.library.api.dto.FormBookDTO;
 import com.bootcamp.library.api.dto.SimpleBookDTO;
 import com.bootcamp.library.api.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,8 @@ import java.util.Collection;
 @RequestMapping("/api/v1.0/books")
 public class BookController {
 
-    private static final BookService bookService = BookService.getInstance();
+    @Autowired
+    private BookService bookService;
 
     @GetMapping
     public Collection<SimpleBookDTO> readAll () {
