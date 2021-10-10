@@ -1,5 +1,6 @@
 package com.bootcamp.library.api.service;
 
+import com.bootcamp.library.api.dto.SimpleAuthorDTO;
 import com.bootcamp.library.api.model.Author;
 
 import java.time.LocalDate;
@@ -7,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /** This service handle the Author model needs
  *
@@ -56,8 +58,13 @@ public class AuthorService {
         mapOfAuthors.remove(email);
     }
 
-    public Collection<Author> getAll () {
-        return mapOfAuthors.values();
+    public Collection<SimpleAuthorDTO> getAll () {
+        return mapOfAuthors
+                .values()
+                .stream()
+                .map(SimpleAuthorDTO::parse)
+                .collect(Collectors.toList())
+                ;
     }
 
     public Author getAuthor (String email) {
