@@ -7,10 +7,7 @@ import com.bootcamp.library.api.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 /** This service handle the Author model needs
@@ -28,12 +25,10 @@ public class AuthorService {
 
     @Autowired
     private AuthorRepository authorRepository;
-    private final Map<String, Author> mapOfAuthors = new HashMap<>();
 
     public static AuthorService getInstance() {
         return instance;
     }
-
 
     public void addAuthor (FormAuthorDTO author) {
         authorRepository.save(author.toAuthor());
