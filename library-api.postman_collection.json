@@ -249,7 +249,7 @@
 	"variable": [
 		{
 			"key": "endpoint",
-			"value": "localhost:8585/api/v1.0"
+			"value": "localhost:8585/"
 		},
 		{
 			"key": "email",
