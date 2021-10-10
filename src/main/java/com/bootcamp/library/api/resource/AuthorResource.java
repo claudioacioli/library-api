@@ -23,11 +23,6 @@ public class AuthorResource {
         return instance;
     }
 
-
-    public void addAuthor (FormAuthorDTO author) {
-        authorService.addAuthor(author.getName(), author.getEmail(), author.getResume(), author.getBirthday());
-    }
-
     public void updateAuthor (FormAuthorDTO author) {
         authorService.updateAuthor(
                 author.getName(),
