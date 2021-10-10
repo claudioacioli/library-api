@@ -12,14 +12,13 @@ import java.time.format.DateTimeFormatter;
  */
 public class BookTester {
     public static void main(String[] args) {
-        Author author = new Author(
-                "Dale Carnegie",
-                "dale_carnegie@gmail.com",
-                "Dale Carnegie (born 1988)  was an American writer and lecturer, " +
-                        "and the developer of courses in self-improvement, " +
-                        "salesmanship, corporate training, public speaking, and interpersonal skills.",
-                LocalDate.parse("11/24/1988", DateTimeFormatter.ofPattern("MM/dd/yyyy"))
-        );
+        Author author = new Author();
+        author.setName("Dale Carnegie");
+        author.setEmail("dale_carnegie@gmail.com");
+        author.setBirthday(LocalDate.parse("11/24/1988", DateTimeFormatter.ofPattern("MM/dd/yyyy")));
+        author.setResume("Dale Carnegie (born 1988)  was an American writer and lecturer, " +
+                "and the developer of courses in self-improvement, " +
+                "salesmanship, corporate training, public speaking, and interpersonal skills.");
 
         Book book = new Book(
                 "1-4391-6734-6",

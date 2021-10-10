@@ -22,14 +22,14 @@ public class AuthorTester {
 
         println(author1);
 
-        Author author2 = new Author(
-                "Dale Carnegie",
-                "dale_carnegie@gmail.com",
-                "Dale Carnegie (born 1988)  was an American writer and lecturer, " +
+        Author author2 = new Author();
+        author2.setName("Dale Carnegie");
+        author2.setEmail("dale_carnegie@gmail.com");
+        author2.setBirthday(LocalDate.parse("11/24/1988", DateTimeFormatter.ofPattern("MM/dd/yyyy")));
+        author2.setResume("Dale Carnegie (born 1988)  was an American writer and lecturer, " +
                         "and the developer of courses in self-improvement, " +
-                        "salesmanship, corporate training, public speaking, and interpersonal skills.",
-                LocalDate.parse("11/24/1988", DateTimeFormatter.ofPattern("MM/dd/yyyy"))
-        );
+                        "salesmanship, corporate training, public speaking, and interpersonal skills.");
+
 
         println(author2.getName());
         println(author2.getBirthday().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));

@@ -28,11 +28,4 @@ public class Author {
     private String email;
     private String resume;
     private LocalDate birthday;
-
-    public Author (String name, String email, String resume, LocalDate birthday) {
-        this.name = name;
-        this.email = email;
-        this.resume = resume;
-        this.birthday = birthday;
-    }
 }
