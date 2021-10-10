@@ -4,6 +4,7 @@ import com.bootcamp.library.api.dto.FormBookDTO;
 import com.bootcamp.library.api.dto.SimpleBookDTO;
 import com.bootcamp.library.api.model.Author;
 import com.bootcamp.library.api.model.Book;
+import com.bootcamp.library.api.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,9 @@ public class BookService {
 
     @Autowired
     private AuthorService authorService;
+    @Autowired
+    private BookRepository bookRepository;
+
     private final Map<String, Book> mapOfBooks = new HashMap<>();
 
     public Collection<SimpleBookDTO> getAll () {
@@ -50,14 +54,14 @@ public class BookService {
         );
     }
 
+    // TODO: Think about better approach
     public void addBook (FormBookDTO book) {
-        addBook(
-            book.getIsbn(),
-            book.getTitle(),
-            book.getReleaseDate(),
-            book.getNumberOfPages(),
-            authorService.getAuthor(book.getEmailOfAuthor()).toAuthor()
-        );
+        String email = book.getEmailOfAuthor();
+        Book newBook = book.toBook();
+        Author author = authorService.getAuthor(email).toAuthor();
+        System.out.println(author);
+        newBook.setAuthor(authorService.getAuthor(email).toAuthor());
+        bookRepository.save(newBook);
     }
 
     public SimpleBookDTO getBook(String isbn) {
