@@ -29,9 +29,18 @@ public class AuthorService {
         authorRepository.save(author.toAuthor());
     }
 
+    //TODO: Think about new approach! :-(
     @Transactional
     public void updateAuthor (FormAuthorDTO author) {
-        authorRepository.save(author.toAuthor());
+        Author newAuthor = author.toAuthor();
+        String email = author.getEmail();
+
+        if (authorRepository.existsByEmail(email)) {
+            Long id = authorRepository.findByEmail(email).getId();
+            newAuthor.setId(id);
+        }
+
+        authorRepository.save(newAuthor);
     }
 
     @Transactional
