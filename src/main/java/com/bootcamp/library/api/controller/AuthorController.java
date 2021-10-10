@@ -48,6 +48,6 @@ public class AuthorController {
 
     @DeleteMapping("{email}")
     public void delete (@PathVariable String email) {
-        authorResource.removeAuthor(email);
+        authorService.removeAuthor(email);
     }
 }
