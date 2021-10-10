@@ -44,7 +44,7 @@ public class AuthorService {
     }
 
     public void removeAuthor (String email) {
-        mapOfAuthors.remove(email);
+        authorRepository.deleteByEmail(email);
     }
 
     public Collection<SimpleAuthorDTO> getAll () {
