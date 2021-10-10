@@ -2,6 +2,7 @@ package com.bootcamp.library.api.model;
 
 import lombok.*;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
 /** This describes a book in the library
@@ -15,10 +16,28 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Entity(name = "books")
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String isbn;
     private String title;
+
+    @Column(name = "release_date")
     private LocalDate releaseDate;
-    private int numberOfPages;
+
+    @Column(name = "pages")
+    private Integer numberOfPages;
+
+    @ManyToOne
     private Author author;
+
+    public Book(String isbn, String title, LocalDate releaseDate, Integer numberOfPages, Author author) {
+        this.isbn = isbn;
+        this.title = title;
+        this.releaseDate = releaseDate;
+        this.numberOfPages = numberOfPages;
+        this.author = author;
+    }
 }
