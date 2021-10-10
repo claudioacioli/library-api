@@ -41,6 +41,13 @@ public class BookService {
         ;
     }
 
+    public SimpleBookDTO getBook(String isbn) {
+        if (!bookRepository.existsByIsbn(isbn))
+            throw new IllegalArgumentException("There isn't book with this isbn");
+
+        return SimpleBookDTO.parse(bookRepository.findByIsbn(isbn));
+    }
+
     // TODO: Think about better approach
     public void addBook (FormBookDTO book) {
         String email = book.getEmailOfAuthor();
@@ -49,13 +56,6 @@ public class BookService {
         System.out.println(author);
         newBook.setAuthor(authorService.getAuthor(email).toAuthor());
         bookRepository.save(newBook);
-    }
-
-    public SimpleBookDTO getBook(String isbn) {
-        if (!bookRepository.existsByIsbn(isbn))
-            throw new IllegalArgumentException("There isn't book with this isbn");
-
-        return SimpleBookDTO.parse(bookRepository.findByIsbn(isbn));
     }
 
     public void updateBook (String isbn, String title, LocalDate releaseDate, int numberOfPages, Author author) {
