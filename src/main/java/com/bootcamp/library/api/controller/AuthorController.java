@@ -38,7 +38,7 @@ public class AuthorController {
 
     @PostMapping
     public void create (@RequestBody @Valid FormAuthorDTO author) {
-        authorResource.addAuthor(author);
+        authorService.addAuthor(author);
     }
 
     @PutMapping
