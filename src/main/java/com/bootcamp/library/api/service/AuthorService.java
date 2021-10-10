@@ -3,6 +3,7 @@ package com.bootcamp.library.api.service;
 import com.bootcamp.library.api.dto.FormAuthorDTO;
 import com.bootcamp.library.api.dto.SimpleAuthorDTO;
 import com.bootcamp.library.api.model.Author;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -17,6 +18,8 @@ import java.util.stream.Collectors;
  * create on 2021/09/26
  * @see Author
  */
+
+@Service
 public class AuthorService {
     private static final AuthorService instance = new AuthorService();
     private AuthorService () {
