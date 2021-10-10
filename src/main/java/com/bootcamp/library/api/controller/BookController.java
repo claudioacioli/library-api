@@ -47,7 +47,6 @@ public class BookController {
 
     @DeleteMapping("{isbn}")
     public void delete (@PathVariable String isbn) {
-        bookResource.removeBook(isbn);
+        bookService.deleteBook(isbn);
     }
-
 }
