@@ -22,6 +22,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class FormAuthorDTO {
 
+    private Long id;
+
     @NotBlank
     private String name;
 
@@ -33,6 +35,13 @@ public class FormAuthorDTO {
 
     @Past
     private LocalDate birthday;
+
+    public FormAuthorDTO (String name, String email, String resume, LocalDate birthday) {
+        this.name = name;
+        this.email = email;
+        this.resume = resume;
+        this.birthday = birthday;
+    }
 
     public static FormAuthorDTO parse (Author author) {
         ModelMapper modelMapper = new ModelMapper();
