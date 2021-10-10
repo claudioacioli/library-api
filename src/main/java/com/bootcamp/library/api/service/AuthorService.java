@@ -66,9 +66,9 @@ public class AuthorService {
     }
 
     public FormAuthorDTO getAuthor (String email) {
-        if (mapOfAuthors.get(email) == null)
+        if (!authorRepository.existsByEmail(email))
             throw new IllegalArgumentException("There isn't author with this email");
 
-        return FormAuthorDTO.parse(mapOfAuthors.get(email));
+        return FormAuthorDTO.parse(authorRepository.findByEmail(email));
     }
 }
