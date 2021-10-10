@@ -8,6 +8,7 @@ import com.bootcamp.library.api.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,6 +47,7 @@ public class BookService {
     }
 
     // TODO: Think about better approach
+    @Transactional
     public void addBook (FormBookDTO book) {
         String email = book.getEmailOfAuthor();
         Book newBook = book.toBook();
@@ -56,6 +58,7 @@ public class BookService {
     }
 
     // TODO: Think about better approach
+    @Transactional
     public void updateBook (FormBookDTO book) {
         String isbn = book.getIsbn();
         Book updatedBook = book.toBook();
@@ -68,6 +71,7 @@ public class BookService {
         bookRepository.save(updatedBook);
     }
 
+    @Transactional
     public void deleteBook (String isnb) {
         bookRepository.deleteByIsbn(isnb);
     }
