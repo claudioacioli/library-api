@@ -61,12 +61,12 @@ public class BookService {
         );
     }
 
-    public Book getBook(String isbn) {
+    public SimpleBookDTO getBook(String isbn) {
         Book book = mapOfBooks.get(isbn);
         if (book == null)
             throw new IllegalArgumentException("There isn't book with this isbn");
 
-        return book;
+        return SimpleBookDTO.parse(book);
     }
 
     public void updateBook (String isbn, String title, LocalDate releaseDate, int numberOfPages, Author author) {

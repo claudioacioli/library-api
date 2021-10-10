@@ -32,7 +32,7 @@ public class BookController {
 
     @GetMapping("{isbn}")
     public SimpleBookDTO read (@PathVariable String isbn) {
-        return bookResource.getBook(isbn);
+        return bookService.getBook(isbn);
     }
 
     @PostMapping

@@ -26,11 +26,4 @@ public class BookResource {
         return instance;
     }
 
-    public SimpleBookDTO getBook (String isbn) {
-        return SimpleBookDTO.parse(bookService.getBook(isbn));
-    }
-
-
-
-
 }
