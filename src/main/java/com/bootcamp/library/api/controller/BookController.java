@@ -4,10 +4,13 @@ import com.bootcamp.library.api.dto.FormBookDTO;
 import com.bootcamp.library.api.dto.SimpleBookDTO;
 import com.bootcamp.library.api.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
+import java.net.URI;
 import java.util.Collection;
 
 /** This controller provides endpoints to handle Books
@@ -36,8 +39,10 @@ public class BookController {
     }
 
     @PostMapping
-    public void create (@RequestBody @Valid FormBookDTO book) {
+    public ResponseEntity<FormBookDTO> create (@RequestBody @Valid FormBookDTO book, UriComponentsBuilder uriBuilder) {
         bookService.addBook(book);
+        URI uri = uriBuilder.path("/books/{isbn}").buildAndExpand(book.getIsbn()).toUri();
+        return ResponseEntity.created(uri).body(book);
     }
 
     @PutMapping
