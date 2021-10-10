@@ -58,19 +58,6 @@ public class BookService {
         bookRepository.save(newBook);
     }
 
-    public void updateBook (String isbn, String title, LocalDate releaseDate, int numberOfPages, Author author) {
-        mapOfBooks.replace(
-            isbn,
-            new Book(
-                isbn,
-                title,
-                releaseDate,
-                numberOfPages,
-                author
-            )
-        );
-    }
-
     // TODO: Think about better approach
     public void updateBook (FormBookDTO book) {
         String isbn = book.getIsbn();
