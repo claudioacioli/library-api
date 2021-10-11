@@ -1,29 +1,40 @@
 # *library-api*
 
-Bem-vindo a `library-api` um projeto usando Spring Boot para disponibilizar uma API de uma livraria.  
-Este projeto faz parte do segundo projeto do Bootcamp Java da Alura!
+Bem-vindo a `library-api` um projeto usando Spring Boot para disponibilizar uma API de uma livraria. 
+Este projeto faz parte do Bootcamp Java da Alura!
+
+## Aos instrutores
+Pessoal, sei que no meu projeto existem coisas que ainda não vimos e que ainda iremos ver, como o docker, mas já estou pondo em prática para aprender em paralelo. Peço desculpas por não seguir a risca os detalhes do projeto.
+No quesito aplição sim, segui a risca todas as especificações. Um forte abraço.
 
 ## Usando Postman
 
-Foi disponibilizada uma coleção Postman para auxiliar os instrutores na validação do código.
+Foi disponibilizada uma [coleção Postman](https://github.com/claudioacioli/library-api/blob/main/library-api.postman_collection.json) para auxiliar os instrutores na validação do código.
 
 ## Usando o Docker
 
-Caso deseje usar `Dockerfile`, siga os métodos abaixo:
+**Atenção: como pré-requisito para seguir os passos abaixo faz se necessário ter uma instância de banco de dados rodando
+antes de empacotar o aplicativo em um `.jar`. Estudando para oferecer uma solução mais amigável**
 
-1. Crie o arquivo `.jar`:
+1. Crie as variaveis de ambiente 
 ```shell
-./mvnw package && java -jar target/*.jar
+export DATABASE_HOST=127.0.0.1
+export DATABASE_PORT=3306
+export DATABASE_USER=root
+export DATABASE_PASSWORD=123
+```
+2. Crie o arquivo `.jar`: 
+```shell
+./mvnw package
 ```
 
-2. crie uma imagem `docker`:
+2. Crie e inicialize utilizando o `docker-compose`:
 ```shell
-docker build -t library-api/v1.0 .
+docker-compose up -d
 ```
 
-3. Execute o container
+3. Para um teste menos aprofundado sugiro a utilização do utilitário de linha de comando `httpie`:
 ```shell
-docker run library-api:v1.0
+http :8585/authors
 ```
-
-4. Altere a variável `endpoint` na coleção Postman
+Caso queira testar com a coleção `postman` disponibilizada, certifique-se de alterar a variável `endpoint`.
