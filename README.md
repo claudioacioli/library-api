@@ -1,20 +1,22 @@
 # *library-api*
 
-Bem-vindo a `library-api` um projeto usando Spring Boot para disponibilizar uma API de uma livraria. 
-Este projeto faz parte do Bootcamp Java da Alura!
+Bem-vindo a `library-api` um projeto usando `spring-boot` para disponibilizar uma `api` de uma livraria. 
+Este projeto faz parte do Bootcamp `Java` da `Alura`!
 
 ## Aos instrutores
-Pessoal, sei que no meu projeto existem coisas que ainda não vimos e que ainda iremos ver, como o docker, mas já estou pondo em prática para aprender em paralelo. Peço desculpas por não seguir a risca os detalhes do projeto.
-No quesito aplição sim, segui a risca todas as especificações. Um forte abraço.
+Pessoal, sei que no meu projeto existem coisas que ainda não vimos e que ainda iremos ver, como o docker, 
+mas já estou praticando para aprender em paralelo. 
+Peço desculpas por não seguir a risca os detalhes do projeto.
+No quesito aplicação sim, segui a risca todas as especificações. Um forte abraço.
 
 ## Usando Postman
 
-Foi disponibilizada uma [coleção Postman](https://github.com/claudioacioli/library-api/blob/main/library-api.postman_collection.json) para auxiliar os instrutores na validação do código.
+Foi disponibilizada uma [coleção `postman`](https://github.com/claudioacioli/library-api/blob/main/library-api.postman_collection.json) para auxiliar os instrutores na validação do código.
 
 ## Pré-requisito
 
 Como pré-requisito para seguir os passos abaixo é necessário ter uma instância de banco de dados rodando
-antes de empacotar o aplicativo em um `.jar`. Estudando para oferecer uma solução mais amigável. 
+antes de empacotar o aplicativo em um `.jar`. **Estudando para oferecer uma solução mais amigável**. 
 
 Por enquanto sugiro a criação de um container do `mariadb` com o comando abaixo:
 ```shell
@@ -31,7 +33,7 @@ docker run
 
 ## Usando o Docker
 
-1. Crie as variaveis de ambiente 
+1. Crie as variáveis de ambiente 
 ```shell
 export DATABASE_HOST=127.0.0.1
 export DATABASE_PORT=3306
@@ -49,7 +51,7 @@ export DATABASE_PASSWORD=123
 docker-compose up -d
 ```
 
-3. Para um teste menos aprofundado sugiro a utilização do utilitário de linha de comando `httpie`:
+3. Para um teste menos aprofundado sugiro a utilização do utilitário de linha de comando [`HTTPie`](https://httpie.io/cli):
 ```shell
 http :8585/authors
 ```
