@@ -1,6 +1,6 @@
 # *library-api*
 
-Bem-vindo a `library-api` um projeto usando `spring-boot` para disponibilizar uma `api` de uma livraria. 
+Bem-vindo ao `library-api`, um projeto usando `spring-boot` para disponibilizar uma `api` de uma livraria. 
 Este projeto faz parte do Bootcamp `Java` da `Alura`!
 
 ## Aos instrutores
@@ -18,7 +18,7 @@ Foi disponibilizada uma [coleção `postman`](https://github.com/claudioacioli/l
 Como pré-requisito para seguir os passos abaixo é necessário ter uma instância de banco de dados rodando
 antes de empacotar o aplicativo em um `.jar`. **Estudando para oferecer uma solução mais amigável**. 
 
-Por enquanto sugiro a criação de um container do `mariadb` com o comando abaixo:
+Por enquanto, sugiro a criação de um container do `mariadb` com o comando abaixo:
 ```shell
 # comando foi dividido em linhas para uma melhor visualização.
 docker run 
@@ -51,7 +51,7 @@ export DATABASE_PASSWORD=123
 docker-compose up -d
 ```
 
-3. Para um teste menos aprofundado sugiro a utilização do utilitário de linha de comando [`HTTPie`](https://httpie.io/cli):
+3. Para um teste menos aprofundado, sugiro a utilização do utilitário de linha de comando [`HTTPie`](https://httpie.io/cli):
 ```shell
 http :8585/authors
 ```
