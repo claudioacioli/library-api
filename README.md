@@ -11,7 +11,7 @@ No quesito aplição sim, segui a risca todas as especificações. Um forte abra
 
 Foi disponibilizada uma [coleção Postman](https://github.com/claudioacioli/library-api/blob/main/library-api.postman_collection.json) para auxiliar os instrutores na validação do código.
 
-##Pré-requisito
+## Pré-requisito
 
 Como pré-requisito para seguir os passos abaixo é necessário ter uma instância de banco de dados rodando
 antes de empacotar o aplicativo em um `.jar`. Estudando para oferecer uma solução mais amigável. 
