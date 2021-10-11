@@ -1,15 +1,18 @@
 version: "3.7"
 services:
   app:
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_PORT=3306
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=123
     build: .
     ports:
       - "8585:8585"
     restart: always
     depends_on:
-      - database
-    networks:
-      - app-net
-  database:
+      - db
+  db:
     image: mariadb
     restart: always
     environment:
@@ -19,7 +22,3 @@ services:
     command: --init-file /data/application/init.sql
     volumes:
       - ./initdata:/data/application
-networks:
-  app-net:
-    external:
-      name: nat
