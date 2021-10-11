@@ -7,7 +7,7 @@ Este projeto faz parte do Bootcamp `Java` da `Alura`!
 Pessoal, sei que no meu projeto existem coisas que ainda não vimos e que ainda iremos ver, como o docker, 
 mas já estou praticando para aprender em paralelo. 
 Peço desculpas por não seguir a risca os detalhes do projeto.
-No quesito aplicação sim, segui a risca todas as especificações. Um forte abraço.
+No quesito aplicação sim, segui a risca todas as especificações. Um forte abraço!
 
 ## Usando Postman
 
