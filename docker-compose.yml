@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  app:
+    build: .
+    ports:
+      - "8585:8585"
+    restart: always
+    depends_on:
+      - database
+    networks:
+      - app-net
+  database:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+    ports:
+      - "3306:3306"
+    command: --init-file /data/application/init.sql
+    volumes:
+      - ./initdata:/data/application
+networks:
+  app-net:
+    external:
+      name: nat
